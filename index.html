@@ -65,111 +65,151 @@
         }
         .product-card:hover {
             transform: scale(1.05);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data and Airtime Selling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .product-card h3 {
-            margin: 10px 0;
-            color: #ff416c;
-        }
-        .product-card p {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .product-card button {
-            padding: 10px 20px;
-            border: none;
-            background: #ff416c;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .product-card button:hover {
-            background: #d92b57;
-        }
-        .contact-section {
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
             text-align: center;
-            padding: 30px;
-            background: #ff4b2b;
-            color: white;
-            border-radius: 10px;
-            margin-top: 30px;
         }
-        .contact-section input, .contact-section button {
-            padding: 10px;
-            margin-top: 10px;
-            width: 80%;
-            border-radius: 5px;
-            border: none;
-            font-size: 1em;
-        }
-        .contact-section button {
-            background: white;
-            color: #ff4b2b;
-            cursor: pointer;
-        }
-        .contact-section button:hover {
-            background: #ffe0e0;
-        }
-        footer {
-            text-align: center;
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            background: #333;
-            color: white;
-            margin-top: 30px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .plan {
+            flex: 1 1 calc(33.333% - 20px);
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .plan h3 {
+            margin: 0 0 10px;
+        }
+        .plan p {
+            margin: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="header">🛍️ Business Storefront</div>
-    
-    <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-    </nav>
+
+    <header>
+        <h1>Data and Airtime Selling</h1>
+    </header>
 
     <div class="container">
-        <h2>🔥 Trending Products</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200" alt="Product 1">
-                <h3>Exclusive Sneakers</h3>
-                <p>Limited edition footwear for top style.</p>
-                <button onclick="addToCart('Sneakers')">Add to Cart</button>
+        <form id="serviceForm">
+            <div class="form-group">
+                <label for="serviceType">Select Service Type</label>
+                <select id="serviceType" name="serviceType">
+                    <option value="data">Data</option>
+                    <option value="airtime">Airtime</option>
+                </select>
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200" alt="Product 2">
-                <h3>Luxury Watch</h3>
-                <p>Premium watches at the best price.</p>
-                <button onclick="addToCart('Watch')">Add to Cart</button>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number">
             </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/200" alt="Product 3">
-                <h3>Smartphone</h3>
-                <p>Latest model with cutting-edge features.</p>
-                <button onclick="addToCart('Smartphone')">Add to Cart</button>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount">
+            </div>
+            <button type="submit" class="btn">Buy Now</button>
+        </form>
+
+        <div class="plans">
+            <div class="plan">
+                <h3>Data Plan 1</h3>
+                <p>1GB - $5</p>
+            </div>
+            <div class="plan">
+                <h3>Data Plan 2</h3>
+                <p>2.5GB - $10</p>
+            </div>
+            <div class="plan">
+                <h3>Data Plan 3</h3>
+                <p>5GB - $15</p>
+            </div>
+            <div class="plan">
+                <h3>Airtime Plan 1</h3>
+                <p>$10 Airtime</p>
+            </div>
+            <div class="plan">
+                <h3>Airtime Plan 2</h3>
+                <p>$20 Airtime</p>
+            </div>
+            <div class="plan">
+                <h3>Airtime Plan 3</h3>
+                <p>$50 Airtime</p>
             </div>
         </div>
     </div>
 
-    <div class="contact-section">
-        <h2>📞 Contact Us</h2>
-        <p>Have questions? Drop your email and we'll reach out.</p>
-        <input type="email" placeholder="adamswasiu850@gmail.com">
-        <button>Submit</button>
-    </div>
-
-    <footer>© 2025 Business Storefront | All Rights Reserved</footer>
-
     <script>
-        function addToCart(item) {
-            alert(item + " added to cart!");
-        }
+        document.getElementById('serviceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const serviceType = document.getElementById('serviceType').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const amount = document.getElementById('amount').value;
+
+            if (phoneNumber && amount) {
+                alert(`You have successfully purchased ${serviceType} for ${phoneNumber} with amount $${amount}.`);
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
     </script>
+
 </body>
 </html>
